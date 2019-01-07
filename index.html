@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+
+
+  <div id="myEmbeddedScene">
+  <a-scene embedded>
+      <a-assets>
+        <a-asset-item id="test" src="obj/cuadroblanco.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity  scale="0.05 0.05 0.05" position="0 0 -3" rotation="0 45 0" color="#7BC8A4" gltf-model="#test"></a-entity>
+
+      <a-box position="-3 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-cylinder position="3 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
+
+    </a-scene>
+  </div>
+  </body>
+</html>
+
+
