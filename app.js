@@ -3,6 +3,8 @@ const express = require('express')
 const path = require('path')
 const multer = require('multer');
 const bodyParser = require('body-parser');
+var fs = require('fs');
+
 
 //SETUP APP
 const app = express()
@@ -54,17 +56,48 @@ app.use(express.static('public'))
   };
 
 
-   app.post('/upload', multer(multerConfig).single('fileuploadform'),function(req, res){
+   app.post('/upload', multer(multerConfig).single('photo'),function(req, res){
       //Here is where I could add functions to then get the url of the new photo
       //And relocate that to a cloud storage solution with a callback containing its new url
       //then ideally loading that into your database solution.   Use case - user uploading an avatar...
       res.send('Complete! Check out your public/photo-storage folder.  Please note that files not encoded with an image mimetype are rejected. <a href="/">try again</a>');
+      //Order sent message.
   });
 
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-    //res.sendFile(path.join(__dirname + '/glbconvert.html'));
+    //res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/glbconvert.html'));
+    res.sendFile(path.join(__dirname + '/public/photo-1548706588944.stl'));
+    console.log("mando esto");
+    //res.sendFile(path.join(__dirname + '/bebeco.html'));
 });
+
+// SERVE ORDER DATA:
+
+//1. toma el archivo
+//2. convierte utilizando convertermod.js
+//3. serve it in aframe
+/*
+fs.readFile('public/photo-1548706588944.stl', 'utf8', function(err, contents) {
+    console.log(contents);
+
+});
+console.log("hello");
+*/
+// PUT order in
+
+/* GET ORDER:
+app.get('/order',function(order no.)){
+  1. Convierte el archivo en una carpeta temporal.
+  2. Lo carga junto con el html.
+
+  3. Puede ver dos ordenes con datos diferentes.
+
+}
+
+
+*/
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="./styles/style.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<!--PICKER-->
+<script src="https://rawgit.com/Sphinxxxx/vanilla-picker/master/dist/vanilla-picker.min.js"></script>
+
+<!--Converter-->
+<script async type="text/javascript" src="js/./a.out.js"></script>
+<script async type="text/javascript" src="js/convertermod.js"></script>
+
+<style>
+
+#dragAndDrop {
+    min-height: 200px;
+    white-space: pre;
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+#info {
+    width:100%
+    display: -webkit-flex;
+    display: flex;
+}
+
+#picker {
+    cursor: pointer;
+}
+
+.picker_wrapper::before {
+    height: 0;
+}
+.picker_wrapper .picker_hue,
+.picker_wrapper .picker_sl,
+.picker_wrapper .picker_alpha,
+.picker_wrapper .picker_sample {
+    outline: none;
+    box-shadow: 0 0 0 1px silver;
+}
+
+</style>
+
+<body>
+    <h1>PREVIEW STL</h1>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <!--<div id="dragAndDrop"
+         ondragenter="event.stopPropagation(); event.preventDefault();"
+         ondragover="event.stopPropagation(); event.preventDefault();"
+         ondrop="event.stopPropagation(); event.preventDefault();
+         dodrop(event);">
+        <span>Drag and drop STL files here or -->
+
+        <span><input type="file"   onChange="uploaded()"  id="fileuploadform"  /></span>
+         </div>
+         <br>
+    <br>
+    <br>
+        <!--
+        </span>
+        <span></span>
+        <span>Click to change color --> <span id="picker">COLOR</span></span>
+        <span></span>
+        <span>Status: <span id="status">Waiting for upload</span>
+    <!--
+    </div> -->
+    <a id="download"><button id="download_button" disabled>Click to Download</button></a>
+    <br>
+    <br>
+    <br>
+
+
+
+
+</body>
+
+</html>
